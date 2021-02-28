@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.kotlin.kotlinnavigationcomponent.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_AFragment"
+            app:destination="@id/AFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_BFragment"
+            app:destination="@id/BFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AFragment"
+        android:name="com.kotlin.kotlinnavigationcomponent.fragments.AFragment"
+        android:label="fragment_a"
+        app:popUpTo="@id/BFragment"
+        app:popUpToInclusive="true"
+        tools:layout="@layout/fragment_a" />
+    <fragment
+        android:id="@+id/BFragment"
+        android:name="com.kotlin.kotlinnavigationcomponent.fragments.BFragment"
+        android:label="fragment_b"
+        tools:layout="@layout/fragment_b" />
+</navigation>
